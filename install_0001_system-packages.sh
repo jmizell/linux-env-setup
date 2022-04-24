@@ -8,12 +8,14 @@ export DEBIAN_FRONTEND=noninteractive
 
 curl_download "https://deb.nodesource.com/gpgkey/nodesource.gpg.key" "/tmp/nodesource.gpg"
 apt-key add "/tmp/nodesource.gpg" || fail "could not add node gpg key"
-curl_download "https://packages.cloud.google.com/apt/doc/apt-key.gpg" "/tmp/kubernetes.gpg"
-apt-key add "/tmp/kubernetes.gpg" || fail "could not add kubernetes gpg key"
-curl_download "https://xpra.org/gpg.asc" "/tmp/xpra.gpg"
+curl_download "https://xpra.org/gpg-2022.asc" "/tmp/xpra.gpg"
+apt-key add "/tmp/xpra.gpg" || fail "could not add xpra gpg key"
+curl_download "https://xpra.org/gpg-2018.asc" "/tmp/xpra.gpg"
+apt-key add "/tmp/xpra.gpg" || fail "could not add xpra gpg key"
+curl_download "https://xpra.org/gpg-2022.asc" "/tmp/xpra.gpg"
 apt-key add "/tmp/xpra.gpg" || fail "could not add xpra gpg key"
 
-echo "deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable"
+echo "deb [arch=amd64] https://xpra.org/ bullseye main" > /etc/apt/sources.list.d/xpra.list
 
 packages='apt-transport-https
 bash-completion
@@ -118,6 +120,7 @@ zenity-common
 nmap
 zim
 zip
+xpra
 '
 
 apt-get update || fail "could not update repo packages"

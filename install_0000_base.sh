@@ -23,6 +23,6 @@ expect-dev
 apt-transport-https
 '
 
-apt-get update
-apt-get upgrade -y
+apt-get update || fail "could not update packages"
+apt-get upgrade -y || fail "could not upgrade packages"
 apt-get install -y ${packages} || fail "could not install packages"
