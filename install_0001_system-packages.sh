@@ -58,6 +58,9 @@ jq
 libmagic-dev
 libnotify-bin
 libnss3-tools
+libreoffice-calc
+libreoffice-grammarcheck-en-us
+libreoffice-writer
 lsb-release
 mariadb-client
 meld
@@ -65,6 +68,7 @@ ncdu
 neovim
 net-tools
 netcat-openbsd
+nmap
 nmap
 nodejs
 openssh-client
@@ -112,15 +116,14 @@ wget
 x11vnc
 xauth
 xdotool
+xpra
 xterm
 xz-utils
 yara
 zenity
 zenity-common
-nmap
 zim
 zip
-xpra
 '
 
 apt-get update || fail "could not update repo packages"

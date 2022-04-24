@@ -15,5 +15,3 @@ for i in install_*.sh; do
     exit $?
   fi
 done
-
-# libreoffice-writer libreoffice-lightproof-en libreoffice-grammarcheck-en-us libreoffice-calc
