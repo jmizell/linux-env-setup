@@ -23,6 +23,7 @@ build-essential
 bzip2
 ca-certificates
 ca-certificates-java
+cifs-utils
 colordiff
 curl
 default-libmysqlclient-dev
@@ -97,6 +98,8 @@ rsync
 ruby
 ruby-dev
 rubygems
+samba-common
+smbclient
 sqlite3
 sshuttle
 sudo
